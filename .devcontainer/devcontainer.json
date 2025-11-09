@@ -1,7 +1,17 @@
 {
   "name": "MoonBit Development",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {},
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "latest"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,7 +23,7 @@
       }
     }
   },
-  "postCreateCommand": "curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
   "remoteUser": "vscode",
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
