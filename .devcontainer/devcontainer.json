@@ -1,0 +1,26 @@
+{
+  "name": "MoonBit Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "moonbit.moonbit-lang"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "moonbit.moonbit-lang"
+      }
+    }
+  },
+  "postCreateCommand": "curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash",
+  "remoteUser": "vscode",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "workspaceFolder": "/workspace"
+}
+
+
+
+
